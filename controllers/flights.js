@@ -46,8 +46,8 @@ module.exports.add = function (req, res) {
 
 module.exports.edit = function (req, res) {
     Flight.findByIdAndUpdate(req.params.id, parseBody(req.body), {new: true}, (err, data) => {
-            err ? console.error(err) : res.json(serializeItem(data));
-        });
+        err ? console.error(err) : res.json(serializeItem(data));
+    });
 };
 
 module.exports.delete = function (req, res) {
