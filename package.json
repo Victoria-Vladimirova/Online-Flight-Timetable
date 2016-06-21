@@ -6,7 +6,8 @@
     "start": "node ./bin/www",
     "watch": "webpack --progress --colors --watch",
     "lint": "jscs .",
-    "prepush": "npm run lint"
+    "prepush": "npm run lint",
+    "postinstall": "webpack --config ./webpack.config.js --progress --colors"
   },
   "dependencies": {
     "autoprefixer": "^6.3.6",
