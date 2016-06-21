@@ -97,5 +97,5 @@
 
 * **Data Params**  
  
-    `id=[integer]`
+    None
 
