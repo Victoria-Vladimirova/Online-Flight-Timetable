@@ -3,3 +3,4 @@ node_modules/
 public/
 blocks/**/*.css
 bundles/**/*.css
+.env
