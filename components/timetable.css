@@ -1,0 +1,112 @@
+.timetable {
+  width: 875px;
+  margin: 100px auto;
+  color: #4c4c4c;
+  font: 300 0.8em 'Graphik Web', Helvetica, Arial, sans-serif;
+}
+.timetable__tab-label {
+  display: inline-block;
+  margin-bottom: -1px;
+  padding: 13px 35px;
+  text-align: center;
+  border: 1px solid #ddd;
+  background: #fcfcfc;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+  font-size: 1em;
+  user-select: none;
+  width: 65px;
+}
+.timetable__tab-input {
+  display: none;
+}
+.timetable__tab-input:checked + .timetable__tab-label {
+  border: 1px solid #e2deee;
+  border-top: 2px solid #4cc8f1;
+  border-bottom: 1px solid #fff;
+  background: #fff;
+}
+.timetable__tab-input:not(:checked) + .timetable__tab-label {
+  color: #999;
+}
+.timetable__content {
+  border: 1px solid #e2deee;
+  padding: 20px;
+}
+.fa-plane {
+  margin-right: 5px;
+}
+.fa-plane--rotate {
+  transform: rotate(90deg);
+  position: relative;
+  top: -1px;
+}
+.search-panel {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.search-panel__search-field-wrap {
+  display: inline-block;
+  position: relative;
+  margin: -60px auto 0;
+  margin-right: 40px;
+}
+.search-panel__search-field {
+  padding-left: 28px;
+  padding-right: 15px;
+  height: 33px;
+  width: 240px;
+  border-radius: 3px;
+  border: 1px solid #e2deee;
+  -webkit-appearance: none;
+  outline: none;
+  font-size: 0.88em;
+}
+.search-panel label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #999;
+}
+.search-panel__status-wrap {
+  display: inline-block;
+}
+.search-panel__status {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  border: 1px solid #e2deee;
+  outline: none;
+  height: 33px;
+  width: 116px;
+  background-color: #fff;
+  font-size: 0.88em;
+  color: #999;
+  line-height: 33px;
+  padding: 0 10px;
+}
+.search-panel__status:hover .search-panel__status-dropdown-content {
+  display: block;
+}
+.search-panel__status-dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #e2deee;
+}
+.search-panel__status-item {
+  color: #999;
+  padding: 0 8px;
+  text-decoration: none;
+  display: block;
+  width: 118px;
+}
+.search-panel__status-item:hover {
+  background-color: #4cc8f1;
+  color: #fff;
+}
+.fa-angle-down {
+  margin-left: 70px;
+}

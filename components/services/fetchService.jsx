@@ -21,8 +21,8 @@ function request(method, url, data, callback) {
 }
 
 export function list(objParams, callback) {
-    var url = new URL(location.origin + '/flights');
-    Object.keys(objParams).forEach(key => url.searchParams.append(key, objParams[key]));
+    var url = location.origin + '/flights?';
+    Object.keys(objParams).forEach(key => url += key + '=' + encodeURIComponent(objParams[key]) + '&');
     request('get', url, objParams, callback);
 }
 

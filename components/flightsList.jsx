@@ -1,6 +1,6 @@
 import React from 'react';
 import * as fetchService from './services/fetchService.jsx';
-import FlightsListItem from "./flightsListItem.jsx";
+import FlightsListItem from './flightsListItem.jsx';
 
 export default class FlightsList extends React.Component {
 
@@ -46,16 +46,16 @@ export default class FlightsList extends React.Component {
         }
     }
 
-    removeFromFlights() {
+    removeEmptyLine() {
         this.state.flights.shift();
         this.setState({flights: this.state.flights});
     }
 
-    handleAdd(newData) {
-        if (!(newData.number && ((newData.to && this.props.departure) || (newData.from &&
-            !this.props.departure)) && newData.planeModel && newData.time && newData.actualTime
-            && newData.status)) {
-            this.removeFromFlights();
+    add(newData) {
+        if (!(newData.number && ((newData.to && this.props.departure)
+            || (newData.from && !this.props.departure)) && newData.planeModel
+            && newData.time && newData.actualTime && newData.status)) {
+            this.removeEmptyLine();
             return;
         }
 
@@ -73,7 +73,7 @@ export default class FlightsList extends React.Component {
         });
     }
 
-    onDelete(id) {
+    remove(id) {
         this.setState({flights: this.state.flights.filter(flight => flight._id !== id)});
     }
 
@@ -91,34 +91,36 @@ export default class FlightsList extends React.Component {
                 onStopEditing={this.unsetEditingModelId.bind(this)}
                 editing={flight._id !== 'newFlight' ? this.state.editingId === flight._id : true}
                 departure={this.props.departure}
-                onAdding={this.handleAdd.bind(this)}
-                onCancelNew={this.removeFromFlights.bind(this)}
-                onDelete={this.onDelete.bind(this)}
+                onAdding={this.add.bind(this)}
+                onCancelNew={this.removeEmptyLine.bind(this)}
+                onDelete={this.remove.bind(this)}
             />
         );
 
         return (
-            <div className="flight-list-wrap">
-                <button className="control-button" onClick={this.addButtonHandle.bind(this)}
+            <div className='flight-list-wrap'>
+                <button className='control-button' onClick={this.addButtonHandle.bind(this)}
                         disabled={this.state.editingId !== null}>
                     Добавить рейс
                 </button>
 
-                <table className="flight-list">
-                    <thead className="flight-list__head">
-                    <tr className="flight-list__head-row">
-                        <th className="flight-list__head-column">Рейс</th>
-                        <th className="flight-list__head-column">
+                <table className='flight-list'>
+                    <thead className='flight-list__head'>
+                    <tr className='flight-list__head-row'>
+                        <th className='flight-list__head-column'>Рейс</th>
+                        <th className='flight-list__head-column'>
                             {this.props.departure ? 'Город прилета' : 'Город вылета'}
                         </th>
-                        <th className="flight-list__head-column">Тип ВС</th>
-                        <th className="flight-list__head-column">Время</th>
-                        <th className="flight-list__head-column">Фактическое время</th>
-                        <th className="flight-list__head-column">Статус</th>
-                        <th className="flight-list__head-column--control">Управление</th>
+                        <th className='flight-list__head-column'>Тип ВС</th>
+                        <th className='flight-list__head-column'>Время</th>
+                        <th className='flight-list__head-column'>Фактическое время</th>
+                        <th className='flight-list__head-column'>Статус</th>
+                        <th className='flight-list__head-column flight-list__head-column--control'>
+                            Управление
+                        </th>
                     </tr>
                     </thead>
-                    <tbody className="flight-list__body">
+                    <tbody className='flight-list__body'>
                     {flightNodes}
                     </tbody>
                 </table>

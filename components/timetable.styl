@@ -1,0 +1,117 @@
+.timetable
+    width 875px
+    margin 100px auto
+    color #4c4c4c
+    font 300 .8em 'Graphik Web', Helvetica, Arial, sans-serif
+
+    &__tab-label
+        display inline-block
+        margin-bottom -1px
+        padding 13px 35px
+        text-align center
+        border 1px solid #ddd
+        background #fcfcfc
+        cursor pointer
+        border-radius 4px 4px 0 0
+        font-size 1em
+        user-select none
+        width 65px
+
+    &__tab-input
+        display none
+
+        &:checked + .timetable__tab-label
+            border 1px solid #e2deee
+            border-top 2px solid #4cc8f1
+            border-bottom 1px solid #fff
+            background #fff
+
+        &:not(:checked) + .timetable__tab-label
+            color #999
+
+    &__content
+        border 1px solid #e2deee
+        padding 20px
+
+.search-panel
+    margin-top 10px
+    margin-bottom 40px
+
+    &__search-field-wrap
+        display inline-block
+        position relative
+        margin -60px auto 0
+        margin-right 40px
+
+    &__search-field
+        padding-left 28px
+        padding-right 15px
+        height 33px
+        width 240px
+        border-radius 3px
+        border 1px solid #e2deee
+        -webkit-appearance none
+        outline none
+        font-size .88em
+
+        &:disabled
+            background-color #fcfcfc
+
+    label
+        position absolute
+        left 10px
+        top 10px
+        color #999
+
+    &__status-wrap
+        display inline-block
+
+    &__status
+        position relative
+        display inline-block
+        cursor pointer
+        border-radius 3px
+        border 1px solid #e2deee
+        outline none
+        height 33px
+        width: 116px
+        background-color #fff
+        font-size .88em
+        color #999
+        line-height 33px
+        padding 0 10px
+
+        &:hover .search-panel__status-dropdown-content
+            display block
+
+    &__status-dropdown-content
+        display none
+        position absolute
+        right: 0
+        background-color #fff
+        border 1px solid #e2deee
+
+    &__status-item
+        color #999
+        padding 0 8px
+        text-decoration none
+        display block
+        width 118px
+
+        &:hover
+            background-color #4cc8f1
+            color #fff
+
+        &--all
+            border-top 1px solid #e2deee
+
+.fa-angle-down
+    margin-left 70px
+
+.fa-plane
+    margin-right 5px
+
+    &--rotate
+        transform rotate(90deg)
+        position relative
+        top -1px
